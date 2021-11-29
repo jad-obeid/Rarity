@@ -1,0 +1,561 @@
+body {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  background-color: rgb(5, 5, 5);
+  display: flex;
+  color: white;
+  flex-direction: column;
+  height: 100%;
+  font-family: "OpenSans";
+}
+.navbar-wrapper {
+  position: sticky;
+  opacity: 0.9;
+}
+.navbar-wrapper span {
+  color: white;
+  font-family: "Lato", Courier, monospace;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+}
+.navbar-wrapper img {
+  height: 20px;
+  pointer-events: none;
+}
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-family: "Lato", Courier, monospace;
+}
+.navbar li {
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+}
+.navbar-wrapper {
+  background-color: black;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  top: 0;
+  margin: 0%;
+}
+
+.contact-us a {
+  text-decoration: none;
+  font-family: "Lato", Courier, monospace;
+  color: white;
+  font-weight: bold;
+}
+.contact-us li {
+  display: inline-block;
+  background-image: linear-gradient(
+    to left,
+    rgb(32, 47, 189),
+    rgb(48, 107, 196),
+    rgb(23, 189, 180)
+  );
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.contact-us li:hover {
+  background-image: linear-gradient(
+    to left,
+    rgb(32, 47, 189),
+    rgb(32, 47, 189)
+  );
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.navbar li:hover {
+  background-color: rgb(59, 59, 59);
+  border-radius: 5px;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato-Black.ttf");
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato-Bold.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato-BlackItalic.ttf");
+  font-style: italic, oblique;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato-Light.ttf");
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/OpenSans-Regular.ttf");
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/OpenSans-Light.ttf");
+  font-weight: lighter;
+}
+@font-face {
+  font-family: "AnticSlab";
+  src: url("../fonts/AnticSlab-Regular.ttf");
+}
+
+h1,
+p {
+  color: white;
+}
+
+.about-us-content {
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+h1 {
+  font-family: "Lato";
+}
+
+.about-us-list {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  font-size: larger;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    to left,
+    rgb(32, 47, 189),
+    rgb(48, 107, 196),
+    rgb(23, 189, 180)
+  );
+}
+
+.about-us-list ul {
+  list-style-type: none;
+  line-height: 32px;
+}
+
+.about-us-list a {
+  text-decoration: none;
+  color: white;
+}
+
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+}
+.about-us-rarity {
+  background-image: url(../images/NFT4.jpg);
+  margin: 0px;
+  padding: 20px;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: larger;
+}
+.footer {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  font-size: large;
+}
+.footer input {
+  border-radius: 5px;
+  height: 30px;
+  width: 70%;
+  background-color: rgb(22, 22, 22);
+  box-shadow: none;
+  border: none;
+  color: white;
+}
+.footer button {
+  background-image: linear-gradient(
+    to left,
+    rgb(32, 47, 189),
+    rgb(48, 107, 196),
+    rgb(23, 189, 180)
+  );
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  color: white;
+}
+hr {
+  width: 90%;
+  height: 1px;
+  background-color: rgb(34, 34, 34);
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-self: center;
+}
+
+.paragraphs {
+  text-align: justify;
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-links a {
+  text-decoration: none;
+  color: white;
+}
+.footer-links ul {
+  list-style: none;
+  padding-left: 0px;
+  margin-top: 0px;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.social-media-icons {
+  display: flex;
+  margin-right: 50px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-bottom a,
+.footer-bottom p {
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(110, 110, 110);
+}
+
+.privacy ul {
+  list-style: none;
+}
+.privacy li {
+  display: inline;
+  margin: 0px 50px 0px 0px;
+}
+.email img {
+  width: 200px;
+  padding: 0px;
+  display: inline;
+}
+.email h4 {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.astrology-nfts {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-container img {
+  border-radius: 10px;
+}
+
+.grid-item1 {
+  grid-area: virgo;
+  width: 410px;
+}
+.grid-item2 {
+  grid-area: aquarius;
+  width: 200px;
+}
+.grid-item3 {
+  grid-area: taurus;
+  width: 200px;
+}
+.grid-item4 {
+  grid-area: gemini;
+  width: 200px;
+}
+.grid-item5 {
+  grid-area: scorpio;
+  width: 200px;
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 10px;
+  justify-content: center;
+  grid-template-areas:
+    "virgo virgo aquarius taurus"
+    "virgo virgo gemini scorpio";
+}
+
+.collection-title {
+  font-family: "AnticSlab";
+}
+#home-title {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.buy-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+}
+.buy-container input {
+  width: 40%;
+  height: 50px;
+  background: none;
+  border: 1px solid #3da4d4;
+  border-radius: 5px 0px 0px 5px;
+  border-right: none;
+  border-right: none;
+}
+.buy-container button {
+  width: 7%;
+  background-image: linear-gradient(
+    to left,
+    rgb(28, 77, 117),
+    rgb(61, 155, 149)
+  );
+  border-radius: 0px 5px 5px 0px;
+  border: none;
+  border-left: none;
+  color: white;
+  font-family: "Lato";
+  font-weight: bold;
+  font-size: large;
+}
+
+.buy-container button:hover {
+  background-image: linear-gradient(
+    to left,
+    rgb(173, 48, 167),
+    rgb(70, 23, 102)
+  );
+}
+
+.buy-container input:focus {
+  outline: none;
+  border: 1px solid #55c9ff;
+  color: white;
+  font-family: "OpenSans";
+  text-align: center;
+  font-size: medium;
+}
+.buy-container input::placeholder {
+  text-align: center;
+  color: rgb(212, 211, 211);
+  font-size: medium;
+}
+.category {
+  padding: 0px 30px 0px 30px;
+}
+.category,
+.price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price img {
+  margin: 5px;
+  width: 35px;
+  height: auto;
+}
+
+.social-media-icons img:hover {
+  opacity: 0.7;
+}
+#uploaded-file {
+  display: none;
+}
+
+.upload-mint {
+  border: 3px dashed rgb(124, 124, 124);
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  width: 50%;
+  height: 300px;
+  background-color: #1a1a1a;
+}
+
+.upload-mint:hover {
+  background-color: #3da4d4;
+  border: none;
+  transition: background-color 500ms linear;
+}
+
+.upload-mint label {
+  font-size: 60px;
+  text-align: center;
+}
+
+.minting-intro {
+  display: flex;
+  background-image: url(../images/BackgroundMint.png);
+  height: 1000px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: larger;
+}
+
+.minting-intro h1 {
+  font-weight: bolder;
+  font-size: 100px;
+  margin-bottom: 250px;
+}
+
+.minting-method {
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .about-us-list {
+    width: 300px;
+  }
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .buy-container button {
+    width: 60px;
+  }
+
+  .minting-intro {
+    background-image: url(../images/backgroundMint600.png);
+  }
+  .minting-intro h1 {
+    font-weight: bolder;
+    font-size: 80px;
+    margin-bottom: 0px;
+    text-align: center;
+  }
+  .about-us-rarity {
+    background-image: url(../images/backgroundContact600.png);
+    height: 900px;
+  }
+  .upload-mint label {
+    font-size: 40px;
+    text-align: center;
+  }
+  .footer {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .navbar-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 150px;
+    position: static;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .grid-container {
+    display: gird;
+    grid-template-areas:
+      "virgo virgo"
+      "virgo virgo"
+      "aquarius taurus"
+      "gemini scorpio";
+  }
+  .buy-container button {
+    width: 60px;
+  }
+
+  .minting-intro {
+    background-image: url(../images/background768.png);
+    background-repeat: no-repeat;
+  }
+  .minting-intro h1 {
+    font-weight: bolder;
+    font-size: 70px;
+    margin-bottom: 0px;
+    text-align: center;
+  }
+  .about-us-rarity {
+    background-image: url(../images/backgroundMint768.png);
+    height: 700px;
+  }
+  .upload-mint label {
+    font-size: 40px;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .grid-item1 {
+    width: 370px;
+  }
+  .grid-item2,
+  .grid-item3,
+  .grid-item4,
+  .grid-item5 {
+    width: 180px;
+  }
+  .minting-intro h1 {
+    font-weight: bolder;
+    font-size: 70px;
+    margin-bottom: 0px;
+    text-align: center;
+  }
+  .about-us-rarity {
+    background-image: url(../images/backgroundContact992.png);
+    height: 850px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .grid-item1 {
+    width: 470px;
+  }
+  .grid-item2,
+  .grid-item3,
+  .grid-item4,
+  .grid-item5 {
+    width: 230px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .grid-item1 {
+    width: 510px;
+  }
+  .grid-item2,
+  .grid-item3,
+  .grid-item4,
+  .grid-item5 {
+    width: 250px;
+  }
+}
