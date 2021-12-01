@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rarity</title>
+    <script src="https://kit.fontawesome.com/757ab8fa7c.js" crossorigin="anonymous"></script>s
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../images/logo.png" />
+  </head>
+  <body>
+    <%- include("header.ejs") %>
+    <div class="minting-intro">
+      <h1>Mint Your First NFT</h1>
+    </div>
+    <p class="minting-method">
+      Minting an NFT is a few clicks away! Upload your file and enter your
+      wallet address and recieve your NFT in just few seconds.
+    </p>
+    <div class="upload-mint">
+      <input type="file" id="uploaded-file" />
+      <label for="uploaded-file">Upload Chosen File</label>
+    </div>
+    <div class="buy-container">
+      <input type="text" placeholder="Enter Wallet" />
+      <button>Mint</button>
+    </div>
+    <hr />
+    <%- include("footer.ejs") %>
+    <script src="../scripts/menu-drop.js"></script>
+  </body>
+</html>

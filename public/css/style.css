@@ -559,3 +559,71 @@ hr {
     width: 250px;
   }
 }
+
+#notfound-header {
+  text-align: center;
+}
+
+.notfound-image > img{
+  width: 400px;
+}
+.notfound-image {
+  align-self: center;
+  justify-self: center;
+}
+
+
+.log-in a {
+  text-decoration: none;
+  font-family: "Lato", Courier, monospace;
+  color: white;
+  font-weight: bold;
+}
+.log-in li {
+  display: inline-block;
+  background-image: linear-gradient(
+    to left,
+    rgb(32, 47, 189),
+    rgb(48, 107, 196),
+    rgb(23, 189, 180)
+  );
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.log-in li:hover {
+  background-image: linear-gradient(
+    to left,
+    rgb(110, 117, 173),
+    rgb(32, 47, 189)
+  );
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.menu-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown{
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.show {display:block;}
+
+.dropbtn{
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.dropbtn > i{
+  color: white;
+}
