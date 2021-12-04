@@ -10,8 +10,11 @@
     <link rel="shortcut icon" type="image/x-icon" href="../images/logo.png" />
   </head>
   <body>
-    <%- include("header.ejs")%>
-    <div class="about-us-rarity">
+    <%if (isLoggedIn) { %>
+      <%- include("logoutheader.ejs")%>
+     <%} else { %>
+      <%- include("header.ejs")%>
+    <% } %>    <div class="about-us-rarity">
       <h1>What is Rarity</h1>
       <p>
         Rarity is a brand new NFT marketplace powered by the Cardano blockchain

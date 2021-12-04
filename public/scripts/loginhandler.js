@@ -1,19 +1,3 @@
-function requestLogin() {
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
-  const login_data = { username: username, password: password };
-
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify(login_data),
-  };
-
-  fetch("/login", options);
-}
 
 function requestRegister() {
   const username = document.getElementById("reg-username").value;
@@ -35,6 +19,8 @@ function requestRegister() {
     };
 
     fetch("/register", options);
+    document.getElementById("register").style.display = "none";
+
   }
   else {
       window.alert("Passwords should match");

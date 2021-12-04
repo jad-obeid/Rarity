@@ -14,6 +14,7 @@ const port = 5050;
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(session({
     secret: "thisisarandomsecret",
     resave: false,
@@ -23,6 +24,9 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(function(err, req, res, next) {
+    console.log(err);
+});
 passport.serializeUser(function (user, done){
     done(null,user.id);
 });
@@ -44,34 +48,42 @@ passport.use(new localStrategy(function (username, password, done) {
 		});
 	});
 }));
-
+function processViewIfLogged(req,res,next){
+    if(req.isAuthenticated()){
+        req.isLogged = true;
+    };
+    return next();
+}
 function isLoggedIn(req,res,next){
     if(req.isAuthenticated()) return next();
     res.redirect('/login');
 }
+function isLoggedOut(req, res, next) {
+	if (!req.isAuthenticated()) return next();
+	res.redirect('/');
+}
+
 app.get("/", (req, res) => {
   res.redirect("/home");
 });
 
-app.get("/home", (req, res) => {
-  res.render("index");
+app.get("/home",processViewIfLogged,(req, res) => {
+  res.render("index",{isLoggedIn: req.isLogged});
 });
 
-app.get("/login", (req, res) => {
+app.get("/login",isLoggedOut,(req, res) => {
   res.render("login");
 });
-app.get("/aboutus", (req, res) => {
-  res.render("aboutus");
+app.get("/aboutus",processViewIfLogged, (req, res) => {
+  res.render("aboutus",{isLoggedIn: req.isLogged});
 });
-app.get("/mint", (req, res) => {
-  res.render("mint");
+app.get("/mint",processViewIfLogged, (req, res) => {
+  res.render("mint",{isLoggedIn: req.isLogged});
 });
 
 app.post('/login', passport.authenticate('local', {
-	successRedirect: '/',
-	failureRedirect: '/login?error=true'
+    successRedirect: '/'
 }));
-
 
 app.post("/register", async (req, res) => {
   const userRecord = req.body;
