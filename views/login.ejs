@@ -1,49 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/style.css" />
     <title>Login</title>
-</head>
-<body>
+  </head>
+  <body>
     <%- include("header.ejs") %>
     <div class="authentication-forms">
-        <div class="register">
-            <h1>Register</h1>
-            <label for="firstname">First Name</label>
-            <input type="text" id="firstname">
-            <br>
-            <label for="lastname">Last Name</label>
-            <input type="text" id="lastname">
-            <br>
-            <label for="reg-username">Username</label>
-            <input type="text" id="reg-username">
-            <br>
-            <label for="reg-password">Password</label>
-            <input type="password" id="reg-password">
-            <br>
-            <label for="repeat-password">Repeat Password</label>
-            <input type="password" id="repeat-password">
-            <br>
-            <button onclick="requestRegister()" type="submit">Register</button>
-        </div>
-        <div class="login">
-            <h1>Login</h1>
-            <label for="username">Username</label>
-            <input type="text" id="username">
-            <br>
-            <label for="password">Password</label>
-            <input type="password" id="password">
-            <br>
-            <button onclick="requestLogin()" type="submit">Login</button>
-        </div>
+      <div id="register" class="register">
+        <h1>Register</h1>
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" />
+        <br />
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" />
+        <br />
+        <label for="reg-username">Username</label>
+        <input type="text" id="reg-username" />
+        <br />
+        <label for="reg-email">Email</label>
+        <input type="email" id="reg-email" />
+        <br />
+        <label for="reg-password">Password</label>
+        <input type="password" id="reg-password" />
+        <br />
+        <label for="repeat-password">Repeat Password</label>
+        <input type="password" id="repeat-password" />
+        <br />
+        <button onclick="requestRegister()" type="submit">Register</button>
+      </div>
+      <div class="login">
+        <h1>Login</h1>
+        <label for="username">Username</label>
+        <input type="text" id="username" />
+        <br />
+        <label for="password">Password</label>
+        <input type="password" id="password" />
+        <br />
+        <button onclick="requestLogin()" type="submit">Login</button>
+        <br />
+        <span id="signup">
+          No account yet?
+          <button  onclick="showRegister()" type="submit">
+            Sign Up
+          </button></span>
+      </div>
     </div>
-    <hr>
+    <hr />
     <%- include("footer.ejs") %>
     <script src="../scripts/loginhandler.js"></script>
-</body>
+  </body>
 </html>
-
-

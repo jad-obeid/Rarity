@@ -19,11 +19,12 @@ function requestRegister() {
   const username = document.getElementById("reg-username").value;
   const password = document.getElementById("reg-password").value;
   const repeat_password = document.getElementById("repeat-password").value;
+  const email = document.getElementById("reg-email").value;
   const fname = document.getElementById("firstname").value;
   const lname = document.getElementById("lastname").value;
 
   if (password == repeat_password) {
-    const login_data = {firstname: fname, lastname:lname, username: username, password: password};
+    const login_data = {firstname: fname, lastname:lname, email: email, username: username, password: password};
     const options = {
       method: "POST",
       headers: {
@@ -38,4 +39,10 @@ function requestRegister() {
   else {
       window.alert("Passwords should match");
   }
+}
+
+function showRegister(){
+    document.getElementById("register").style.display = "flex";
+    document.getElementById("signup").style.display = "none";
+    console.log("working");
 }
