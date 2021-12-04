@@ -2,7 +2,7 @@ function dropMenu() {
     document.getElementById("drop-menu").classList.toggle("show");
   }
   
-window.onclick = function(event) {
+window.onclick = (event) => {
     if (!event.target.matches('.dropbtn')) {
       let dropdowns = document.getElementsByClassName("dropdown");
         for (let i = 0; i < dropdowns.length; i++) {

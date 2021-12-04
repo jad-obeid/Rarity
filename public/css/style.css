@@ -627,3 +627,81 @@ hr {
 .dropbtn > i{
   color: white;
 }
+
+.login{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid white;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.login input {
+  border-radius: 5px;
+  height: 30px;
+  width: 250px;
+  background-color: rgb(22, 22, 22);
+  box-shadow: none;
+  border: none;
+  color: white;
+}
+.login button {
+  background-image: linear-gradient(
+    to left,
+    rgb(32, 47, 189),
+    rgb(48, 107, 196),
+    rgb(23, 189, 180)
+  );
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  color: white;
+  align-self: center;
+}
+
+.authentication-forms{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.register{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid white;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.register input {
+  border-radius: 5px;
+  height: 30px;
+  width: 250px;
+  background-color: rgb(22, 22, 22);
+  box-shadow: none;
+  border: none;
+  color: white;
+}
+.register button {
+  background-image: linear-gradient(
+    to left,
+    rgb(32, 47, 189),
+    rgb(48, 107, 196),
+    rgb(23, 189, 180)
+  );
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  color: white;
+  align-self: center;
+}
+
+.login h1, .register h1 {
+  text-align: center;
+}
