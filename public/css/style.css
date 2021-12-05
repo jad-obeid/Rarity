@@ -242,10 +242,13 @@ hr {
   display: flex;
   margin-right: 50px;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
+  color: rgb(110, 110, 110);
+  font-size: 25px;
 }
-
+.social-media-icons >i {
+  margin: 0px 5px;
+}
 .footer-bottom a,
 .footer-bottom p {
   font-weight: bold;
@@ -626,6 +629,7 @@ hr {
 
 .dropbtn > i{
   color: white;
+  font-size: 14px;
 }
 
 .login{

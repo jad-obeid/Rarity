@@ -77,8 +77,8 @@ app.get("/login",isLoggedOut,(req, res) => {
 app.get("/aboutus",processViewIfLogged, (req, res) => {
   res.render("aboutus",{isLoggedIn: req.isLogged});
 });
-app.get("/mint",processViewIfLogged, (req, res) => {
-  res.render("mint",{isLoggedIn: req.isLogged});
+app.get("/mint",isLoggedIn, (req, res) => {
+  res.render("mint");
 });
 
 app.post('/login', passport.authenticate('local', {
@@ -93,9 +93,13 @@ app.post("/register", async (req, res) => {
   console.log(mongores);
 });
 
-app.get('/restricted', isLoggedIn, (req, res) => {
-	res.send("<h1>Restrcited</h1>");
+app.get('/profile', isLoggedIn, (req, res) => {
+	res.render("profile",{
+    username: req.user.username
+  });
 });
+
+
 
 app.get("/logout", (req,res)=>{
     req.logout();

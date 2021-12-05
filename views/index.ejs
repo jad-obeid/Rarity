@@ -1,24 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="keywords"
-      content=", NFT, nft market, art market, non-fungible tokens, crypto, Eth, Ada"
-    />
-    <meta name="author" content="Jad Obeid" />
-    <meta
-      name="description"
-      content="Rarity is a new NFT marketplace where artists can create new breathe
-    taking art and mint them into Non fungible tokens. Rarity provides a marketplace for digital art enthusiasts 
-    to trade NFTs in a fast, reliable, and safe manner with little to no extra fees."
-    />
+    <%- include("head.ejs")%>
     <title>Rarity</title>
-    <script src="https://kit.fontawesome.com/757ab8fa7c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../images/logo.png" />
   </head>
   <%if (isLoggedIn) { %>
     <%- include("logoutheader.ejs")%>
