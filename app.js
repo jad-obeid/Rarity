@@ -2,6 +2,7 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 const usermodel = require("./models/users");
+const nftcollection = require("./models/nftcollection.js");
 const session = require("express-session");
 const passport = require("passport");
 const localStrategy = require("passport-local").Strategy;
@@ -67,8 +68,11 @@ app.get("/", (req, res) => {
   res.redirect("/home");
 });
 
-app.get("/home",processViewIfLogged,(req, res) => {
-  res.render("index",{isLoggedIn: req.isLogged});
+app.get("/home",processViewIfLogged, async (req, res) => {
+  const mongores = await nftcollection.find();
+  const databaseres= Object.assign({}, mongores);
+  databaseres.isLoggedIn = req.isLogged;
+  res.render("index",databaseres);
 });
 
 app.get("/login",isLoggedOut,(req, res) => {

@@ -315,10 +315,6 @@ hr {
 .collection-title {
   font-family: "AnticSlab";
 }
-#home-title {
-  padding-bottom: 0px;
-  margin-bottom: 0px;
-}
 
 .buy-container {
   display: flex;

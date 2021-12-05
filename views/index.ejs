@@ -4,33 +4,26 @@
     <%- include("head.ejs")%>
     <title>Rarity</title>
   </head>
-  <%if (isLoggedIn) { %>
-    <%- include("logoutheader.ejs")%>
-   <%} else { %>
-    <%- include("header.ejs")%>
-  <% } %>
+  <%if (isLoggedIn) { %> <%- include("logoutheader.ejs")%> <%} else { %> <%-
+  include("header.ejs")%> <% } %>
   <body>
-    <div class="category">
-      <h2 class="collection-title" id="home-title">Hottest Deals &#x1F975;</h2>
-      <div class="price">
-        <p>500 ADA</p>
-        <img src="../images/cardano-logo.png" alt="" />
+    <div>
+      <div class="category">
+        <h2 class="collection-title">Hottest Deals &#x1F975;</h2>
+        <div class="price">
+          <p>500 ADA</p>
+          <img src="../images/cardano-logo.png" alt="" />
+        </div>
+      </div>
+      <div class="grid-container">
+        <img class="grid-item1" src="../homepage-nfts/hottestdeals/hottest1.png" alt="" />
+        <img class="grid-item2" src="../homepage-nfts/hottestdeals/hottest2.png" alt="" />
+        <img class="grid-item3" src="../homepage-nfts/hottestdeals/hottest3.jpg" alt="" />
+        <img class="grid-item4" src="../homepage-nfts/hottestdeals/hottest4.png" alt="" />
+        <img class="grid-item5" src="../homepage-nfts/hottestdeals/hottest5.jpg" alt="" />
       </div>
     </div>
     <div>
-      <div class="grid-container">
-        <img class="grid-item1" src="../images/futuristic1.png" alt="" />
-        <img class="grid-item2" src="../images/finalfinalnft.png" alt="" />
-        <img class="grid-item3" src="../images/monkey1.jpg" alt="" />
-        <img class="grid-item4" src="../images/final1.png" alt="" />
-        <img class="grid-item5" src="../images/neon1.jpg" alt="" />
-      </div>
-    </div>
-    <div class="buy-container">
-      <input type="text" placeholder="Enter Wallet" />
-      <button>Buy</button>
-    </div>
-    <div class="cryptobud-nfts">
       <div class="category">
         <h2 class="collection-title">Spacebuds &#x1F47D;</h2>
         <div class="price">
@@ -39,18 +32,14 @@
         </div>
       </div>
       <div class="grid-container">
-        <img class="grid-item1" src="../images/spacebud1.png" alt="" />
-        <img class="grid-item2" src="../images/spacebud2.png" alt="" />
-        <img class="grid-item3" src="../images/spacebud3.png" alt="" />
-        <img class="grid-item4" src="../images/spacebud4.png" alt="" />
-        <img class="grid-item5" src="../images/spacebud5.png" alt="" />
+        <img class="grid-item1" src="../homepage-nfts/spacebuds/spacebud1.png" alt="" />
+        <img class="grid-item2" src="../homepage-nfts/spacebuds/spacebud2.png" alt="" />
+        <img class="grid-item3" src="../homepage-nfts/spacebuds/spacebud3.png" alt="" />
+        <img class="grid-item4" src="../homepage-nfts/spacebuds/spacebud4.png" alt="" />
+        <img class="grid-item5" src="../homepage-nfts/spacebuds/spacebud5.png" alt="" />
       </div>
     </div>
-    <div class="buy-container">
-      <input type="text" placeholder="Enter Wallet" />
-      <button>Buy</button>
-    </div>
-    <div class="yummi-nfts">
+    <div>
       <div class="category">
         <h2 class="collection-title">Yummies &#x1F368;</h2>
         <div class="price">
@@ -60,18 +49,14 @@
       </div>
 
       <div class="grid-container">
-        <img class="grid-item1" src="../images/yummi1.jpg" alt="" />
-        <img class="grid-item2" src="../images/yummi2.jpg" alt="" />
-        <img class="grid-item3" src="../images/yummi3.png" alt="" />
-        <img class="grid-item4" src="../images/yummi4.png" alt="" />
-        <img class="grid-item5" src="../images/yummi5.png" alt="" />
+        <img class="grid-item1" src="../homepage-nfts/yummies/yummi1.jpg" alt="" />
+        <img class="grid-item2" src="../homepage-nfts/yummies/yummi2.jpg" alt="" />
+        <img class="grid-item3" src="../homepage-nfts/yummies/yummi3.png" alt="" />
+        <img class="grid-item4" src="../homepage-nfts/yummies/yummi4.png" alt="" />
+        <img class="grid-item5" src="../homepage-nfts/yummies/yummi5.png" alt="" />
       </div>
     </div>
-    <div class="buy-container">
-      <input type="text" placeholder="Enter Wallet" />
-      <button>Buy</button>
-    </div>
-    <div class="astrology-nfts">
+    <div>
       <div class="category">
         <h2 class="collection-title">Astrology &#x264D;</h2>
         <div class="price">
@@ -80,19 +65,16 @@
         </div>
       </div>
       <div class="grid-container">
-        <img class="grid-item1" src="../images/rare-virgo_orig.gif" alt="" />
-        <img class="grid-item2" src="../images/common-aquarius.gif" alt="" />
-        <img class="grid-item3" src="../images/rare-taurus_orig.gif" alt="" />
-        <img class="grid-item4" src="../images/uncommon-gemini.gif" alt="" />
-        <img class="grid-item5" src="../images/rare-scorpio.gif" alt="" />
+        <img class="grid-item1" src="../homepage-nfts/astrology/astrology1.gif" alt="" />
+        <img class="grid-item2" src="../homepage-nfts/astrology/astrology2.gif" alt="" />
+        <img class="grid-item3" src="../homepage-nfts/astrology/astrology3.gif" alt="" />
+        <img class="grid-item4" src="../homepage-nfts/astrology/astrology4.gif" alt="" />
+        <img class="grid-item5" src="../homepage-nfts/astrology/astrology5.gif" alt="" />
       </div>
-    </div>
-    <div class="buy-container">
-      <input type="text" placeholder="Enter Wallet" />
-      <button>Buy</button>
     </div>
     <hr />
     <%- include('footer.ejs') %>
     <script src="../scripts/menu-drop.js"></script>
+    <script src="../homenft.js"></script>
   </body>
 </html>
