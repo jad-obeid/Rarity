@@ -110,7 +110,6 @@ app.get('/nft/:nftId', async (req,res) =>{
     } 
 ]);
   let nftres = mongores[0];
-  console.log(mongores);
   res.render("nft",{nft: nftres.nfts});
 });
 
