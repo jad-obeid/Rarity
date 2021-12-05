@@ -7,11 +7,10 @@
       </div>
     </div>
     <div class="grid-container">
-      <img class="grid-item1" src="<%= url1 %>" alt="" />
-      <img class="grid-item2" src="<%= url2 %>" alt="" />
-      <img class="grid-item3" src="<%= url3 %>" alt="" />
-      <img class="grid-item4" src="<%= url4 %>" alt="" />
-      <img class="grid-item5" src="<%= url5 %>" alt="" />
+    <% let i=1; nfts.forEach(function(nft) { %>
+        <img class="grid-item<%= i%>" src="<%= nft.url%>" alt="" />
+        <%i++;%>
+    <% }); %>
     </div>
   </div>
   <div class="buy-container">

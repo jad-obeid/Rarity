@@ -10,7 +10,7 @@ const nftSchema = new mongoose.Schema({
 const collectionSchema = new mongoose.Schema({
     name: { type: String, required: true},
     average_price: { type: Number, required: true},
-    ntfs: [nftSchema],
+    nfts: [nftSchema],
 });
 
 const model = mongoose.model('nftcollection', collectionSchema);

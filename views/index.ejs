@@ -7,74 +7,11 @@
   <%if (isLoggedIn) { %> <%- include("logoutheader.ejs")%> <%} else { %> <%-
   include("header.ejs")%> <% } %>
   <body>
-    <div>
-      <div class="category">
-        <h2 class="collection-title">Hottest Deals &#x1F975;</h2>
-        <div class="price">
-          <p>500 ADA</p>
-          <img src="../images/cardano-logo.png" alt="" />
-        </div>
-      </div>
-      <div class="grid-container">
-        <img class="grid-item1" src="../homepage-nfts/hottestdeals/hottest1.png" alt="" />
-        <img class="grid-item2" src="../homepage-nfts/hottestdeals/hottest2.png" alt="" />
-        <img class="grid-item3" src="../homepage-nfts/hottestdeals/hottest3.jpg" alt="" />
-        <img class="grid-item4" src="../homepage-nfts/hottestdeals/hottest4.png" alt="" />
-        <img class="grid-item5" src="../homepage-nfts/hottestdeals/hottest5.jpg" alt="" />
-      </div>
-    </div>
-    <div>
-      <div class="category">
-        <h2 class="collection-title">Spacebuds &#x1F47D;</h2>
-        <div class="price">
-          <p>2,500 ADA</p>
-          <img src="../images/cardano-logo.png" alt="" />
-        </div>
-      </div>
-      <div class="grid-container">
-        <img class="grid-item1" src="../homepage-nfts/spacebuds/spacebud1.png" alt="" />
-        <img class="grid-item2" src="../homepage-nfts/spacebuds/spacebud2.png" alt="" />
-        <img class="grid-item3" src="../homepage-nfts/spacebuds/spacebud3.png" alt="" />
-        <img class="grid-item4" src="../homepage-nfts/spacebuds/spacebud4.png" alt="" />
-        <img class="grid-item5" src="../homepage-nfts/spacebuds/spacebud5.png" alt="" />
-      </div>
-    </div>
-    <div>
-      <div class="category">
-        <h2 class="collection-title">Yummies &#x1F368;</h2>
-        <div class="price">
-          <p>10,000 ADA</p>
-          <img src="../images/cardano-logo.png" alt="" />
-        </div>
-      </div>
-
-      <div class="grid-container">
-        <img class="grid-item1" src="../homepage-nfts/yummies/yummi1.jpg" alt="" />
-        <img class="grid-item2" src="../homepage-nfts/yummies/yummi2.jpg" alt="" />
-        <img class="grid-item3" src="../homepage-nfts/yummies/yummi3.png" alt="" />
-        <img class="grid-item4" src="../homepage-nfts/yummies/yummi4.png" alt="" />
-        <img class="grid-item5" src="../homepage-nfts/yummies/yummi5.png" alt="" />
-      </div>
-    </div>
-    <div>
-      <div class="category">
-        <h2 class="collection-title">Astrology &#x264D;</h2>
-        <div class="price">
-          <p>900 ADA</p>
-          <img src="../images/cardano-logo.png" alt="" />
-        </div>
-      </div>
-      <div class="grid-container">
-        <img class="grid-item1" src="../homepage-nfts/astrology/astrology1.gif" alt="" />
-        <img class="grid-item2" src="../homepage-nfts/astrology/astrology2.gif" alt="" />
-        <img class="grid-item3" src="../homepage-nfts/astrology/astrology3.gif" alt="" />
-        <img class="grid-item4" src="../homepage-nfts/astrology/astrology4.gif" alt="" />
-        <img class="grid-item5" src="../homepage-nfts/astrology/astrology5.gif" alt="" />
-      </div>
-    </div>
+      <% collections.forEach(function(result) { %>
+        <%- include("product-group",{name:result.name, average_price:result.average_price, nfts: result.nfts})%>
+      <% }); %>
     <hr />
     <%- include('footer.ejs') %>
     <script src="../scripts/menu-drop.js"></script>
-    <script src="../homenft.js"></script>
   </body>
 </html>

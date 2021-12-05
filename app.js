@@ -69,10 +69,9 @@ app.get("/", (req, res) => {
 });
 
 app.get("/home",processViewIfLogged, async (req, res) => {
+  const options = ['hottestdeals', 'yummies', 'spacebuds', 'astrology'];
   const mongores = await nftcollection.find();
-  const databaseres= Object.assign({}, mongores);
-  databaseres.isLoggedIn = req.isLogged;
-  res.render("index",databaseres);
+  res.render("index",{collections: mongores,isLoggedIn: req.isLogged});
 });
 
 app.get("/login",isLoggedOut,(req, res) => {

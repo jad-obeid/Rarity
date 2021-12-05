@@ -6,7 +6,7 @@ mongoose.connect(`${mongoUlr}/rarity-db`);
 const hottestdeals = {
   name: "Hottest Deals",
   average_price: 500,
-  ntfs: [
+  nfts: [
     {
       name: "Futuristic City",
       type: "Common",
@@ -43,7 +43,7 @@ const hottestdeals = {
 const astrology = {
   name: "Astrology",
   average_price: 900,
-  ntfs: [
+  nfts: [
     {
       name: "Astrology #1",
       type: "Rare",
@@ -80,7 +80,7 @@ const astrology = {
 const spacebuds = {
   name: "Spacebuds",
   average_price: 2500,
-  ntfs: [
+  nfts: [
     {
       name: "Spacebud #1",
       type: "Rare",
@@ -117,7 +117,7 @@ const spacebuds = {
 const yummies = {
   name: "Yummies",
   average_price: 10000,
-  ntfs: [
+  nfts: [
     {
       name: "Yummi #1",
       type: "Rare",
