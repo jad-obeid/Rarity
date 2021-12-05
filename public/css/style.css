@@ -277,7 +277,9 @@ hr {
   display: flex;
   flex-direction: column;
 }
-
+.grid-container a{
+  display:inline-block;
+}
 .grid-container img {
   border-radius: 10px;
 }
@@ -705,3 +707,51 @@ hr {
 .login h1, .register h1 {
   text-align: center;
 }
+
+.cardano-logo{
+  width: 35px;
+  display: inline;
+}
+.nft-product{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+  width: 500px;
+  align-self: center;
+  justify-self: center;
+  margin: 30px 0px;
+  padding: 20px 0px;
+  background-image: linear-gradient(to bottom,
+  #06beb6,
+  #48b1bf);
+}
+
+.nft-product > .nft-image {
+  width: 400px;
+  border-radius: 15px;
+  box-shadow: #000000;
+}
+
+.nft-price{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nft-price > p{
+  font-size: 30px;
+  font-weight: bold;
+}
+ .nft-head{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   align-items: center;
+   margin: 0px;
+ }
+
+ .nft-head > div{
+   margin: 0px 30px;
+ }

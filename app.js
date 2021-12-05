@@ -69,7 +69,6 @@ app.get("/", (req, res) => {
 });
 
 app.get("/home",processViewIfLogged, async (req, res) => {
-  const options = ['hottestdeals', 'yummies', 'spacebuds', 'astrology'];
   const mongores = await nftcollection.find();
   res.render("index",{collections: mongores,isLoggedIn: req.isLogged});
 });
@@ -102,6 +101,18 @@ app.get('/profile', isLoggedIn, (req, res) => {
   });
 });
 
+
+app.get('/nft/:nftId', async (req,res) =>{
+  const mongores = await nftcollection.aggregate([ 
+    { "$unwind" : '$nfts'},
+    { "$match" : 
+        { "nfts._id" : new mongoose.Types.ObjectId(req.params.nftId)} 
+    } 
+]);
+  let nftres = mongores[0];
+  console.log(mongores);
+  res.render("nft",{nft: nftres.nfts});
+});
 
 
 app.get("/logout", (req,res)=>{

@@ -8,7 +8,7 @@
     </div>
     <div class="grid-container">
     <% let i=1; nfts.forEach(function(nft) { %>
-        <img class="grid-item<%= i%>" src="<%= nft.url%>" alt="" />
+        <a class="grid-item<%= i%>" href="/nft/<%= nft._id%>"><img class="grid-item<%= i%>" src="<%= nft.url%>" alt="" /></a>
         <%i++;%>
     <% }); %>
     </div>

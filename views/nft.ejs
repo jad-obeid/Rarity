@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Product</title>
+    <%-include("head.ejs")%>
+  </head>
+  <body>
+    <%- include("logoutheader.ejs") %>
+    <div class="nft-product">
+      <div class="nft-head">
+        <h1 class="nft-name"><%= nft.name%></h1>
+        <div class="nft-price">
+          <p><%= nft.price%></p>
+          <div>
+            <img class="cardano-logo" src="../images/cardano-logo.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <img class="nft-image" src="<%= nft.url%>" alt="" />
+    </div>
+    <%- include("footer.ejs") %>
+  </body>
+</html>
