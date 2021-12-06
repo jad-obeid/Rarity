@@ -334,19 +334,19 @@ hr {
   border-right: none;
 }
 .buy-container button {
-  width: 7%;
+  width: 100px;
   background-image: linear-gradient(
     to left,
     rgb(28, 77, 117),
     rgb(61, 155, 149)
   );
-  border-radius: 0px 5px 5px 0px;
+  border-radius: 15px;
   border: none;
   border-left: none;
   color: white;
   font-family: "Lato";
   font-weight: bold;
-  font-size: large;
+  font-size: 30px;
 }
 
 .buy-container button:hover {

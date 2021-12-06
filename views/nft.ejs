@@ -18,11 +18,20 @@
       </div>
 
       <img class="nft-image" src="<%= nft.url%>" alt="" />
+      <h1 id="price-usd"></h1>
     </div>
     <div class="buy-container">
-        <input type="text" placeholder="Enter Wallet" />
-        <button>Buy</button>
-      </div>
+      <button>Buy</button>
+    </div>
     <%- include("footer.ejs") %>
+    <script src="../scripts/nftgetprice.js"></script>
+    <script>
+        let priceinada = '<%- JSON.stringify(nft.price) %>';
+        fetchNftPrice(Number(priceinada)).then(
+          data =>{
+            document.getElementById("price-usd").innerHTML = "$ "+data ;
+          }
+        );
+    </script>
   </body>
 </html>

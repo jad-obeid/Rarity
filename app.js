@@ -92,7 +92,6 @@ app.post("/register", async (req, res) => {
   const hashedPassword = await bcrypt.hash(userRecord.password, 15);
   userRecord.password = hashedPassword;
   const mongores = await usermodel.create(userRecord);
-  console.log(mongores);
 });
 
 app.get('/profile', isLoggedIn, (req, res) => {
@@ -100,7 +99,6 @@ app.get('/profile', isLoggedIn, (req, res) => {
     username: req.user.username
   });
 });
-
 
 app.get('/nft/:nftId', async (req,res) =>{
   const mongores = await nftcollection.aggregate([ 
