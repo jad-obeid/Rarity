@@ -1,1 +1,47 @@
-<img src="<%= nft.url %>" alt="bzez" />
+    <div class="nft-product" style="margin: 10px; flex:45%" id="<%= nft._id %>">
+        <div class="nft-head">
+            <h1 class="nft-name"><%= nft.nftName%></h1>
+            <div class="nft-price">
+                <p><%= nft.nftPrice%></p>
+                <div>
+                    <img class="cardano-logo" src="../images/cardano-logo.png" alt="" />
+                </div>
+            </div>
+        </div>
+
+        <img class="nft-image" src="<%= nft.url%>" alt="" style="height:300px; width:auto"/>
+        <div>
+            <p><%= nft.nftDesc%></p>
+        </div>
+        <h1 id="price-usd"></h1>
+            <div class="buy-container">
+                <button style="margin-right: 10px" onclick="RemoveNFT('<%= nft._id %>')">Delete</button>
+                <button onclick="Edit('<%= nft._id %>f')">Edit</button>
+            </div>
+            <div id="<%= nft._id %>f" style="display: none;">
+                <form action="/editUserNFT" method="post">
+                    <p>
+                        <label for="nftName">NFT name: </label><input type="text" name="nftName" id="">
+                    </p>
+                    <p>
+                        <label for="nftPrice">NFT price: </label><input type="number" name="nftPrice" id="">
+                    </p>
+                    <p>
+                        <label for="nftDesc">NFT Description: </label><textarea name="nftDesc" id="" cols="30" rows="10"></textarea>
+                    </p>
+                    <input type="hidden" name="nftID" value="<%= nft._id %>">
+                    <button type="submit" value="Submit" id="Submit" style="float:right;">Submit</button>
+                </form>
+            </div>
+    </div>
+
+    <!-- <script src="../scripts/nftgetprice.js"></script>
+    <script>
+        let priceinada = '<%- JSON.stringify(nft.nftPrice) %>';
+        fetchNftPrice(Number(priceinada)).then(
+            data => {
+                document.getElementById("price-usd").innerHTML = "$ " + data;
+            }
+        );
+    </script> -->
+

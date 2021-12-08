@@ -9,6 +9,8 @@ const passport = require("passport");
 const localStrategy = require("passport-local").Strategy;
 const multer  = require('multer');
 const app = express();
+const ObjectId = require('mongodb').ObjectID;
+const { ObjectID } = require("bson");
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -125,6 +127,22 @@ app.get('/profile', isLoggedIn, async (req, res) => {
     nfts:nfts
   });
 });
+
+app.post("/deleteNFT", async (req,res)=>{
+await userNftModel.deleteOne({"_id": ObjectId(`${req.body.ID}`)});
+res.send("success");
+});
+
+app.post("/editUserNFT", async (req,res)=>{
+  const myquery = { "_id": ObjectId(`${req.body.nftID}`) };
+  const newvalues = { $set: {nftName: req.body.nftName, nftPrice: req.body.nftPrice, nftDesc: req.body.nftDesc } };
+  await userNftModel.updateOne(myquery, newvalues);
+  res.redirect("/profile");
+
+});
+
+
+
 
 app.get('/nft/:nftId', async (req,res) =>{
   const mongores = await nftcollection.aggregate([ 
