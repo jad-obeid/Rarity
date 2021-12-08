@@ -3,24 +3,8 @@
 <head>
     <%- include("head.ejs")%>
     <title>Profile</title>
+    <link rel="stylesheet" href="../css/profileStyle.css">
 </head>
-<style>
-    body > h1 {
-        text-align: center;
-        font-size: 3em;
-        font-family:Arial, Helvetica, sans-serif;
-        text-shadow:rgb(103, 115, 126) 2px 2px;
-        border: 1px solid white;
-        border-radius: 1rem;
-        padding: 5px;
-        margin: 20px;
-    }
-    body>h2{
-        text-align: center;
-        font-size: 2em;
-        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
-</style>
 <body>
     <%- include("logoutheader.ejs")%>
     <h1>Hello <%= username%> </h1>
@@ -32,35 +16,6 @@
     </div>
     <%- include("footer.ejs")%>
 </body>
-<script>
-    function RemoveNFT(Id) {
-        console.log(Id);
-        fetch("http://localhost:5050/deleteNFT", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-                },
-                body: `ID=${Id}`,
-            })
-            .then(function (response) {
-                return response.text();
-            })
-            .then(function (data) {
-                console.log(data);
-                if (data == "success") {
-                    //Remove the row of the table via DOM manipulation
-                    const row = document.getElementById(Id);
-                    row.remove();
-                }
-            })
-            .catch(function (err) {
-                console.error(err);
-            });
-    }
-    function Edit(ID){
-        let formdiv = document.getElementById(ID);
-        console.log(formdiv)
-        formdiv.style.display = "block";
-    }
-</script>
 </html>
+
+<script src="../scripts/profile.js"></script>

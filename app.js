@@ -12,7 +12,7 @@ const app = express();
 const ObjectId = require('mongodb').ObjectID;
 const { ObjectID } = require("bson");
 
-var storage = multer.diskStorage({
+let storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, './public/nft-uploads/')
     },
@@ -20,7 +20,7 @@ var storage = multer.diskStorage({
       cb(null, file.originalname)
     }
 })
-var upload = multer({ storage: storage })
+let upload = multer({ storage: storage })
 
 const mongoUlr = "mongodb://127.0.0.1:27017";
 mongoose.connect(`${mongoUlr}/rarity-db`);
@@ -98,6 +98,12 @@ app.get("/mint",isLoggedIn, (req, res) => {
     username: req.user.username
   });
 });
+
+app.get("/explore", isLoggedIn, (req, res) => {
+  res.render("explore", {
+    username: req.user.username
+  })
+})
 
 app.post("/mint",isLoggedIn,upload.single('uploaded-file'), async function (req, res){
   let nftDetails = req.body;

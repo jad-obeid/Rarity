@@ -18,30 +18,20 @@
                 <button style="margin-right: 10px" onclick="RemoveNFT('<%= nft._id %>')">Delete</button>
                 <button onclick="Edit('<%= nft._id %>f')">Edit</button>
             </div>
-            <div id="<%= nft._id %>f" style="display: none;">
+            <div class="editItemDiv" id="<%= nft._id %>f" style="display: none;">
                 <form action="/editUserNFT" method="post">
-                    <p>
+                    <div class="editName">
                         <label for="nftName">NFT name: </label><input type="text" name="nftName" id="">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="editPrice">
                         <label for="nftPrice">NFT price: </label><input type="number" name="nftPrice" id="">
-                    </p>
-                    <p>
-                        <label for="nftDesc">NFT Description: </label><textarea name="nftDesc" id="" cols="30" rows="10"></textarea>
-                    </p>
+                    </div>
+                    <div class="editDesc">
+                        <label for="nftDesc">NFT Description: </label><textarea name="nftDesc" id="" cols="21" rows="5"></textarea>
+                    </div>
                     <input type="hidden" name="nftID" value="<%= nft._id %>">
                     <button type="submit" value="Submit" id="Submit" style="float:right;">Submit</button>
                 </form>
             </div>
     </div>
-
-    <!-- <script src="../scripts/nftgetprice.js"></script>
-    <script>
-        let priceinada = '<%- JSON.stringify(nft.nftPrice) %>';
-        fetchNftPrice(Number(priceinada)).then(
-            data => {
-                document.getElementById("price-usd").innerHTML = "$ " + data;
-            }
-        );
-    </script> -->
 

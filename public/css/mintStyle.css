@@ -1,0 +1,145 @@
+.upload-mint {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .mint-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .mint-container form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .mint-container input {
+    height: 50px;
+    width: 60%;
+    text-align: center;
+    background: none;
+    border: 1px solid #3da4d4;
+    border-radius: 5px;
+    color: white;
+  }
+
+  .mint-container textarea {
+    height: 50px;
+    width: 60%;
+    background: none;
+    border: 1px solid #3da4d4;
+    border-radius: 5px;
+    color: white;
+  }
+
+  .mint-container textarea:focus {
+    outline: none;
+    border: 1px solid #55c9ff;
+    color: white;
+    font-family: "OpenSans";
+    font-size: 14px;
+  }
+
+  .mint-container input::placeholder {
+    text-align: center;
+    color: rgb(110, 110, 110);
+    font-size: 14px;
+  }
+
+  .mint-container textarea::placeholder {
+    color: rgb(110, 110, 110);
+    font-size: 14px;
+  }
+
+  .minInputFields {
+    display: flex; 
+    /* flex-direction: column; */
+}
+
+.mintInputFields {
+    width: 100%;
+}
+
+.nftNameDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.nftRarityDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+
+.mint-container select {
+    height: 50px;
+    width: 60%;
+    text-align: center;
+    background: none;
+    color: white;
+    border: 1px solid #3da4d4;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .mint-container select option {
+    color: black;
+  }
+
+.nftPriceDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.nftDescDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.nftDescDiv textarea {
+    resize: none;
+    height: 10vh;
+}
+
+.mint-container button {
+    background-image: linear-gradient(to left,
+        rgb(28, 77, 117),
+        rgb(61, 155, 149));
+    width: fit-content;
+    padding: 0.7rem;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    font-family: "Lato";
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+
+  
+  .mint-container button:hover {
+    background-image: linear-gradient(to left,
+        rgb(173, 48, 167),
+        rgb(70, 23, 102));
+  }
+
+  .mint-container input:focus {
+    outline: none;
+    border: 1px solid #55c9ff;
+    color: white;
+    font-family: "OpenSans";
+    text-align: center;
+    font-size: 14px;
+  }
