@@ -1,0 +1,100 @@
+@media only screen and (max-width: 600px) {
+    
+    .about-us-list {
+      width: 300px;
+    }
+
+    .about-us-rarity {
+        background-image: url(../images/backgroundContact600.png);
+        height: 900px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    
+    .about-us-rarity {
+        background-image: url(../images/backgroundMint768.png);
+        height: 700px;
+    }   
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    
+    .about-us-rarity {
+        background-image: url(../images/backgroundContact992.png);
+        height: 850px;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translate(-20rem, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+.animParag {
+    animation: slideIn 4s;
+}
+
+#main-container {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100vh;
+    scroll-behavior: smooth;
+}
+
+.about-us-rarity {
+    background-image: url(../images/NFT4.jpg);
+    margin: 0px;
+    padding: 20px;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: larger;
+  }
+
+.about-us-content {
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+.about-us-list {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    font-size: larger;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-image: linear-gradient(
+      to left,
+      rgb(32, 47, 189),
+      rgb(48, 107, 196),
+      rgb(23, 189, 180)
+    );
+  }
+  
+  .about-us-list ul {
+    list-style-type: none;
+    line-height: 32px;
+  }
+  
+  .about-us-list a {
+    text-decoration: none;
+    color: white;
+  }
