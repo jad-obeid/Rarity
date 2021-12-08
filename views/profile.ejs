@@ -7,6 +7,9 @@
 <body>
     <%- include("logoutheader.ejs")%>
     <h1>Hello <%= username%> </h1>
+    <% nfts.forEach(function(nft) { %>
+    <%- include("userNft",{nft: nft})%>
+    <% }); %>
     <%- include("footer.ejs")%>
 </body>
 </html>

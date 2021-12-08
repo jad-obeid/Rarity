@@ -3,10 +3,22 @@ const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 const usermodel = require("./models/users");
 const nftcollection = require("./models/nftcollection.js");
+const userNftModel = require("./models/userNft.js");
 const session = require("express-session");
 const passport = require("passport");
 const localStrategy = require("passport-local").Strategy;
+const multer  = require('multer');
 const app = express();
+
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, './public/nft-uploads/')
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.originalname)
+    }
+})
+var upload = multer({ storage: storage })
 
 const mongoUlr = "mongodb://127.0.0.1:27017";
 mongoose.connect(`${mongoUlr}/rarity-db`);
@@ -80,8 +92,19 @@ app.get("/aboutus",processViewIfLogged, (req, res) => {
   res.render("aboutus",{isLoggedIn: req.isLogged});
 });
 app.get("/mint",isLoggedIn, (req, res) => {
-  res.render("mint");
+  res.render("mint", {
+    username: req.user.username
+  });
 });
+
+app.post("/mint",isLoggedIn,upload.single('uploaded-file'), async function (req, res){
+  let nftDetails = req.body;
+  nftDetails.username = req.user.username;
+  nftDetails.url = req.file.path.replace("public","..");
+  let nftResponse = await userNftModel.create(nftDetails);
+  res.redirect("/profile");
+
+})
 
 app.post('/login', passport.authenticate('local', {
     successRedirect: '/'
@@ -94,9 +117,12 @@ app.post("/register", async (req, res) => {
   const mongores = await usermodel.create(userRecord);
 });
 
-app.get('/profile', isLoggedIn, (req, res) => {
-	res.render("profile",{
-    username: req.user.username
+app.get('/profile', isLoggedIn, async (req, res) => {
+	let nfts = await userNftModel.find({"username": req.user.username});
+
+  res.render("profile",{
+    username: req.user.username,
+    nfts:nfts
   });
 });
 

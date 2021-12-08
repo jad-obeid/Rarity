@@ -3,6 +3,96 @@
   <head>
     <%- include("head.ejs")%>
     <title>Rarity</title>
+    <style> 
+      .upload-mint{
+          width: 100%;
+      }
+      .mint-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 20px;
+      }
+      .mint-container input{
+      height: 50px;
+      width: 60%;
+      text-align: center;
+      background: none;
+      border: 1px solid #3da4d4;
+      border-radius: 5px;
+      color: white;
+      }
+      .mint-container textarea{
+        height: 50px;
+        width: 60%;
+        background: none;
+        border: 1px solid #3da4d4;
+        border-radius: 5px;
+        color: white;
+      }
+      .mint-container select {
+      height: 50px;
+      width: 60%;
+      text-align: center;
+      background: none;
+      color: white;
+      border: 1px solid #3da4d4;
+      border-radius: 5px;
+      }
+      .mint-container select option{
+        color: black;
+      }
+      .mint-container button {
+      float: right;
+      width: 100px;
+      background-image: linear-gradient(
+      to left,
+      rgb(28, 77, 117),
+      rgb(61, 155, 149)
+      );
+      border-radius: 15px;
+      border: none;
+      border-left: none;
+      color: white;
+      font-family: "Lato";
+      font-weight: bold;
+      font-size: 30px;
+      }
+
+      .mint-container button:hover {
+      background-image: linear-gradient(
+      to left,
+      rgb(173, 48, 167),
+      rgb(70, 23, 102)
+      );
+      }
+
+      .mint-container input:focus {
+      outline: none;
+      border: 1px solid #55c9ff;
+      color: white;
+      font-family: "OpenSans";
+      text-align: center;
+      font-size: medium;
+      }
+      .mint-container textarea:focus{
+        outline: none;
+        border: 1px solid #55c9ff;
+        color: white;
+        font-family: "OpenSans";
+        font-size: medium;
+      }
+      .mint-container input::placeholder{
+      text-align: center;
+      color: rgb(110, 110, 110);
+      font-size: medium;
+      }
+      .mint-container textarea::placeholder{
+      color: rgb(110, 110, 110);
+      font-size: medium;
+      }
+
+    </style>
   </head>
   <body>
       <%- include("logoutheader.ejs")%>
@@ -10,18 +100,37 @@
       <h1>Mint Your First NFT</h1>
     </div>
     <p class="minting-method">
-      Minting an NFT is a few clicks away! Upload your file and enter your
-      wallet address and recieve your NFT in just few seconds.
+      Minting an NFT is a few clicks away! Upload your file and your NFT's information to recieve your NFT in just few seconds.
     </p>
-    <div class="upload-mint">
-      <input type="file" id="uploaded-file" />
-      <label for="uploaded-file">Upload Chosen File</label>
+    
+    <div class="mint-container">
+      <form action="http://localhost:5050/mint" method="post" enctype="multipart/form-data" id="mint-form">
+      <div class="upload-mint">
+        <input type="file" name="uploaded-file" id="uploaded-file" />
+        <label for="uploaded-file">Upload Chosen File</label>
+      </div>
+      <p>
+      <label for="nftName">NFT Name: </label><input type="text" name="nftName" placeholder="Insert name of NFT to upload">
+      </p>
+      <p>
+      <label for="nftRarity">NFT Rarity: </label>
+      <select name="nftRarity">
+        <option value="common">Common</option>
+        <option value="uncommon">Uncommon</option>
+        <option value="rare">Rare</option>
+      </select>
+      </p>
+      <p>
+      <label for="nftPrice">NFT Price: </label><input type="number" name="nftPrice" id="" placeholder="Please Enter NFT's price">
+      </p>
+      <p>
+      <label for="nftDesc" style="vertical-align: top;">NFT Description: </label><textarea name="nftDesc" id=""
+        cols="30" rows="5" placeholder="Please enter NFT's description" style="vertical-align: top;"></textarea>
+      </p>
+      <button type="submit" value="submit" form="mint-form">Mint</button>
+    </form>
     </div>
-    <div class="buy-container">
-      <input type="text" placeholder="Enter Wallet" />
-      <button>Mint</button>
-    </div>
-    <hr />
+    <hr/>
     <%- include("footer.ejs") %>
     <script src="../scripts/menu-drop.js"></script>
   </body>
