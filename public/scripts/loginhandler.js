@@ -52,7 +52,7 @@ function requestRegister() {
     $("#passwordValidation").css("display", "none");
   }
   
-  if (password != repeat_password) {
+  if (password != repeat_password || repeat_password == '') {
     $("#passwordConfirmValidation").css("display", "block");
     valid = false;
   }
