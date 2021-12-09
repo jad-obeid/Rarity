@@ -9,11 +9,10 @@
             </div>
         </div>
 
-        <img class="nft-image" src="<%= nft.url%>" alt="" style="height:43vh; width:auto"/>
+        <img class="nft-image-user" src="<%= nft.url%>" alt="" style="height:43vh; width:auto"/>
         <div>
             <p><%= nft.nftDesc%></p>
         </div>
-        <h1 id="price-usd"></h1>
             <div class="buy-container">
                 <button style="margin-right: 10px" onclick="RemoveNFT('<%= nft._id %>')">Delete</button>
                 <button onclick="Edit('<%= nft._id %>f')">Edit</button>

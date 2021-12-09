@@ -1,3 +1,10 @@
+@media screen and (max-width: 600px) {
+    .nft-image-user {
+        height: auto !important;
+        width: 50vw !important;
+    }
+}
+
 body > h1 {
     text-align: center;
     font-size: 3em;
@@ -38,4 +45,10 @@ body>h2{
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
+}
+
+.nft-image-user {
+    height: 40vh !important;
+    width: auto;
+    border-radius: 15px;
 }

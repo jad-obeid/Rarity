@@ -395,14 +395,21 @@ hr {
 
 @media only screen and (max-width: 600px) {
 
+  .nft-product {
+    width: 75vw !important;
+    height: 50vh !important;
+  }
+
+  .nft-image {
+    width: 65vw !important;
+    height: 40vh !important;
+  }
+
   .grid-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  .buy-container button {
-    width: 60px;
   }
 
   .minting-intro {
@@ -441,9 +448,6 @@ hr {
       "virgo virgo"
       "aquarius taurus"
       "gemini scorpio";
-  }
-  .buy-container button {
-    width: 60px;
   }
 
   .minting-intro {
@@ -662,7 +666,8 @@ hr {
   justify-content: center;
   flex-direction: column;
   border-radius: 20px;
-  width: 500px;
+  width: 50vw;
+  height: 75vh;
   align-self: center;
   justify-self: center;
   margin: 30px 0px;
@@ -673,7 +678,8 @@ hr {
 }
 
 .nft-product > .nft-image {
-  width: 400px;
+  width: 35vw;
+  height: 60vh;
   border-radius: 15px;
   box-shadow: #000000;
 }
