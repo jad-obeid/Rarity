@@ -31,7 +31,11 @@
           data =>{
             document.getElementById("price-usd").innerHTML = "$ "+data ;
           }
-        );
+        )
+        .catch(e => {
+          console.log("Failed to fetch nftPrice", e);
+        });
+        
     </script>
   </body>
 </html>

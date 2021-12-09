@@ -21,13 +21,13 @@
             <div class="editItemDiv" id="<%= nft._id %>f" style="display: none;">
                 <form action="/editUserNFT" method="post">
                     <div class="editName">
-                        <label for="nftName">NFT name: </label><input type="text" name="nftName" id="">
+                        <label for="nftName">NFT name: </label><input type="text" name="nftName" id="editNameInput">
                     </div>
                     <div class="editPrice">
-                        <label for="nftPrice">NFT price: </label><input type="number" name="nftPrice" id="">
+                        <label for="nftPrice">NFT price: </label><input type="number" name="nftPrice" id="editPriceInput">
                     </div>
                     <div class="editDesc">
-                        <label for="nftDesc">NFT Description: </label><textarea name="nftDesc" id="" cols="21" rows="5"></textarea>
+                        <label for="nftDesc">NFT Description: </label><textarea name="nftDesc" id="editDescInput" cols="21" rows="5"></textarea>
                     </div>
                     <input type="hidden" name="nftID" value="<%= nft._id %>">
                     <button type="submit" value="Submit" id="Submit" style="float:right;">Submit</button>

@@ -24,6 +24,25 @@ function RemoveNFT(Id) {
 }
 function Edit(ID) {
     let formdiv = document.getElementById(ID);
+    let IdOnly = ID.substring(0, ID.length - 1);
+    
+    fetch(`http://localhost:5050/getUserNFT/:${IdOnly}`, {
+        method: 'GET',
+        headers: {
+            'Content-type': 'Application/json',
+            Accept: 'Application/json'
+        }
+    })
+    .then(res => res.json())
+    .then(res => {
+        console.log("response from server ==>", res);
+        $("#editNameInput").val(res.nftName);
+        $("#editPriceInput").val(res.nftPrice);
+        $("#editDescInput").val(res.nftDesc);
+    })
+    .catch(e => {
+        console.log("Failed to fetch NFTs", e);
+    })
     
     if (formdiv.style.display == 'none') {
         formdiv.style.display = 'flex';
@@ -31,4 +50,6 @@ function Edit(ID) {
     else {
         formdiv.style.display = 'none';
     }
+
+
 }

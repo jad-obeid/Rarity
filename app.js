@@ -115,7 +115,8 @@ app.post("/mint",isLoggedIn,upload.single('uploaded-file'), async function (req,
 })
 
 app.post('/login', passport.authenticate('local', {
-    successRedirect: '/'
+    successRedirect: '/',
+    failureRedirect: '/Login'
 }));
 
 app.post("/register", async (req, res) => {
@@ -139,6 +140,23 @@ await userNftModel.deleteOne({"_id": ObjectId(`${req.body.ID}`)});
 res.send("success");
 });
 
+app.get('/getUserNFT/:id', (req, res) => {
+  let id = req.params.id;
+  id = id.substring(1, id.length);
+  userNftModel.findById(id).then(val => {
+    res.send(val);
+  })
+  .catch(e => {
+    console.log("Failed to retrieve NFT", e);
+  });
+
+});
+
+app.get('/getUserNFT', async (req, res) => {
+  const userNFT = await userNftModel.find();
+  res.send(userNFT);
+});
+
 app.post("/editUserNFT", async (req,res)=>{
   const myquery = { "_id": ObjectId(`${req.body.nftID}`) };
   const newvalues = { $set: {nftName: req.body.nftName, nftPrice: req.body.nftPrice, nftDesc: req.body.nftDesc } };
@@ -147,7 +165,10 @@ app.post("/editUserNFT", async (req,res)=>{
 
 });
 
-
+app.get('/getAllUsers', async (req, res) =>  {
+  const usersList = await usermodel.find();
+  res.send(usersList);
+})
 
 
 app.get('/nft/:nftId', async (req,res) =>{
