@@ -1,4 +1,5 @@
 Sources
 
-Email Validation Regex: http://emailregex.com/ (under JavaScript).
+- Email Validation Regex: http://emailregex.com/ (under JavaScript).
 
+- Item in viewport function: https://stackoverflow.com/questions/123999/how-can-i-tell-if-a-dom-element-is-visible-in-the-current-viewport  (Please note that I modified this method to account for height, so that it triggers once any part of the element becomes visible).

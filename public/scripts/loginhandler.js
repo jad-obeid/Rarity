@@ -132,3 +132,20 @@ function showRegister() {
   document.getElementById("signup").style.display = "none";
   console.log("working");
 }
+
+function EmailRegex() {
+  let regexEmail = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+
+  let emailVal = document.getElementById("reg-email").value;
+
+  console.log(emailVal)
+
+  if (!emailVal.toLowerCase().match(regexEmail)) {
+    $("#emailValidation").css("display", "block");
+    $("#emailValidation").html("This email is not valid!");
+  }
+  
+  else {
+    $("#emailValidation").css("display", "none");
+  }
+}
