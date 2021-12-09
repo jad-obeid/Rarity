@@ -1,0 +1,4 @@
+Sources
+
+Email Validation Regex: http://emailregex.com/ (under JavaScript).
+
