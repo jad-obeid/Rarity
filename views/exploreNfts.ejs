@@ -1,0 +1,28 @@
+    <div class="nft-product" style="margin: 10px; flex:31%">
+        <p style="font-size:large">
+            <span style="color:rgb(114, 32, 196); margin-right:1em; font-family:'Courier New', Courier, monospace">RARITY:</span><%= nft.nftRarity%>
+        </p>
+        <div class="nft-head">
+            <h1 class="nft-name"><%= nft.nftName%></h1>
+            <div class="nft-price">
+                <p><%= nft.nftPrice%></p>
+                <div>
+                    <img class="cardano-logo" src="../images/cardano-logo.png" alt="" />
+                </div>
+            </div>
+        </div>
+        
+
+        <img class="nft-image" src="<%= nft.url%>" alt="" />
+        <div>
+            <p><%= nft.nftDesc%></p>
+        </div>
+        <h1 id="<%= nft._id %>"></h1>
+        <p><i>owned by: <span style="color: rgb(240, 0, 0); font-family:Arial, Helvetica, sans-serif; margin-left:1em"><%= nft.username%></span></i></p>
+    <div class="buy-container">
+        <button style="margin-right: 10px">Buy</button>
+        <button onclick="showPrice('<%= nft.nftPrice%>','<%= nft._id %>')">Price</button>
+    </div>
+</div>
+    
+

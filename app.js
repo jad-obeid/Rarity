@@ -99,9 +99,11 @@ app.get("/mint",isLoggedIn, (req, res) => {
   });
 });
 
-app.get("/explore", isLoggedIn, (req, res) => {
-  res.render("explore", {
-    username: req.user.username
+app.get("/explore", isLoggedIn, async (req, res) => {
+ let nfts = await userNftModel.find(); 
+ 
+ res.render("explore", {
+    nfts:nfts
   })
 })
 

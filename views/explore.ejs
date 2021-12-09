@@ -5,11 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%- include("head.ejs")%>
+    <link rel="stylesheet" href="../css/exploreStyle.css">
     <title>Explore Page</title>
 </head>
 <body>
     <%- include("logoutheader.ejs")%>
-    <h1> Hello World</h1>
+    <h1> Explore Our Users' NFTs</h1>
+    <div style="display: flex; flex-wrap:wrap;">
+        <% nfts.forEach(function(nft) { %>
+        <%- include("exploreNfts",{nft: nft})%>
+        <% }); %>
+    </div>
     <%- include("footer.ejs")%>
 </body>
+<script src="../scripts/nftgetprice.js"></script>
+<script>
+    function showPrice(price, id){
+    fetchNftPrice(Number(price)).then(
+            data => {
+                document.getElementById(id).innerHTML = "$ " + data;
+            }
+        )
+        .catch(e => {
+            console.log("Failed to fetch nftPrice", e);
+        });
+    }
+</script>
 </html>

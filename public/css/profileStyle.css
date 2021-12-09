@@ -1,7 +1,7 @@
 @media screen and (max-width: 600px) {
     .nft-image-user {
         height: auto !important;
-        width: 50vw !important;
+        width: 73vw !important;
     }
 }
 
@@ -48,7 +48,7 @@ body>h2{
 }
 
 .nft-image-user {
-    height: 40vh !important;
-    width: auto;
+    height: 55vh;
+    width: 43vw;
     border-radius: 15px;
 }
