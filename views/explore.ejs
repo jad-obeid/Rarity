@@ -9,7 +9,8 @@
     <title>Explore Page</title>
 </head>
 <body>
-    <%- include("logoutheader.ejs")%>
+    <%if (isLoggedIn) { %> <%- include("logoutheader.ejs")%> <%} else { %> <%-
+        include("header.ejs")%> <% } %>
     <h1> Explore Our Users' NFTs</h1>
     <div style="display: flex; flex-wrap:wrap;">
         <% nfts.forEach(function(nft) { %>

@@ -99,17 +99,26 @@ app.get("/mint",isLoggedIn, (req, res) => {
   });
 });
 
-app.get("/explore", isLoggedIn, async (req, res) => {
+app.get("/explore",processViewIfLogged, async (req, res) => {
  let nfts = await userNftModel.find(); 
  
  res.render("explore", {
-    nfts:nfts
+    nfts:nfts,isLoggedIn: req.isLogged
+  })
+});
+
+app.get("/market", isLoggedIn, async (req, res) => {
+  let nfts = await userNftModel.find({"listed": "True"});
+  res.render("market", {nfts: nfts,
+    username: req.user.username
   })
 })
+
 
 app.post("/mint",isLoggedIn,upload.single('uploaded-file'), async function (req, res){
   let nftDetails = req.body;
   nftDetails.username = req.user.username;
+  nftDetails.listed = "False";
   nftDetails.url = req.file.path.replace("public","..");
   let nftResponse = await userNftModel.create(nftDetails);
   res.redirect("/profile");
@@ -125,14 +134,16 @@ app.post("/register", async (req, res) => {
   const userRecord = req.body;
   const hashedPassword = await bcrypt.hash(userRecord.password, 15);
   userRecord.password = hashedPassword;
+  userRecord.balance = 10000;
   const mongores = await usermodel.create(userRecord);
 });
 
 app.get('/profile', isLoggedIn, async (req, res) => {
 	let nfts = await userNftModel.find({"username": req.user.username});
-
+  let user = await usermodel.findOne({"username": req.user.username});
   res.render("profile",{
     username: req.user.username,
+    balance: user.balance,
     nfts:nfts
   });
 });
@@ -190,6 +201,33 @@ app.get("/logout", (req,res)=>{
     res.redirect("/");
 });
 
+app.post("/buynft",isLoggedIn, async (req,res)=>{
+  let requestedNft = req.body.id;
+  let username = req.user.username;
+  let realNft =await userNftModel.findById(requestedNft);
+  let seller = await usermodel.findOne({"username" : realNft.username})
+  let buyer =await usermodel.findOne({"username": username});
+  if (seller.username != buyer.username){
+  if (Number(realNft.nftPrice) <= Number(buyer.balance)){
+    let resp = await userNftModel.updateOne(realNft,{"listed": "False","username" : buyer.username});
+    let buyerbalance = Number(buyer.balance)-Number(realNft.nftPrice);
+    let sellerbalance = Number(seller.balance) + Number(realNft.nftPrice);
+    await usermodel.updateOne(buyer,{"balance" : buyerbalance});
+    await usermodel.updateOne(seller,{"balance" : sellerbalance});
+    res.send("success");
+  }
+  else{
+    res.send("Not enough balance");
+  }
+}
+});
+
+app.post("/list",isLoggedIn,async (req,res)=>{
+  let requestedNft = req.body.ID;
+  let realNft =await userNftModel.findById(requestedNft);
+  let resp = await userNftModel.updateOne(realNft,{"listed": "True"});
+  res.send("success");
+});
 
 app.use((req, res) => {
   res.render("404");

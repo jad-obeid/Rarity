@@ -7,6 +7,7 @@ const userNftSchema = new mongoose.Schema({
     nftPrice: { type: Number, required: true},
     nftDesc:{ type: String, required: true},
     username:{type: String, required: true},
+    listed: {type: String, required: true},
     url:{ type: String, required: true}
 });
 

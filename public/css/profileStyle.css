@@ -52,3 +52,8 @@ body>h2{
     width: 43vw;
     border-radius: 15px;
 }
+
+.edit-feild{
+    border-radius: 5px;
+    border: none;
+}

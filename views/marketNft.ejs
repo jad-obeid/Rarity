@@ -1,0 +1,18 @@
+<div class="nft-product" id="<%= nft._id %>">
+<div class="nft-head">
+    <h1 class="nft-name"><%= nft.nftName%></h1>
+    <div class="nft-price">
+        <p><%= nft.nftPrice%></p>
+        <div>
+            <img class="cardano-logo" src="../images/cardano-logo.png" alt="" />
+        </div>
+    </div>
+</div>
+<img class="nft-image" src="<%= nft.url%>" alt=""/>
+<div>
+    <p><%= nft.nftDesc%></p>
+</div>
+<div class="buy-container">
+    <button onclick="buynft('<%= nft._id %>')">Buy</button>
+  </div>
+</div>

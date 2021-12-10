@@ -1,6 +1,6 @@
 function RemoveNFT(Id) {
     console.log(Id);
-    fetch("http://localhost:5050/deleteNFT", {
+    fetch("/deleteNFT", {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
@@ -13,7 +13,6 @@ function RemoveNFT(Id) {
         .then(function (data) {
             console.log(data);
             if (data == "success") {
-                //Remove the row of the table via DOM manipulation
                 const row = document.getElementById(Id);
                 row.remove();
             }
@@ -26,7 +25,7 @@ function Edit(ID) {
     let formdiv = document.getElementById(ID);
     let IdOnly = ID.substring(0, ID.length - 1);
     
-    fetch(`http://localhost:5050/getUserNFT/:${IdOnly}`, {
+    fetch(`/getUserNFT/:${IdOnly}`, {
         method: 'GET',
         headers: {
             'Content-type': 'Application/json',
@@ -52,4 +51,29 @@ function Edit(ID) {
     }
 
 
+}
+function List(Id) {
+    console.log(Id);
+    fetch("/list", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        },
+        body: `ID=${Id}`,
+    }).then(function (response) {
+        return response.text();
+    })
+    .then(function (data) {
+        console.log(data);
+        if (data == "success") {
+            let listbutton = "'"+Id+"'button"
+            console.log()
+            console.log()
+            const row = document.getElementById(listbutton);
+            row.remove();
+        }
+    })
+    .catch(function (err) {
+        console.error(err);
+    });;
 }
