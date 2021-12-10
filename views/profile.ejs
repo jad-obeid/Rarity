@@ -10,7 +10,7 @@
 <body>
     <%- include("logoutheader.ejs")%>
     <h1>Hello <%= username%> <br><hr> <%= balance%> ADA </h1>
-    <h2>My NFTs For Sale</h2>
+    <h2>My NFTs</h2>
     <div style="display: flex; flex-wrap:wrap;">
     <% nfts.forEach(function(nft) { %>
     <%- include("userNft",{nft: nft})%>
