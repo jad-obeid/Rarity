@@ -35,9 +35,9 @@ function Edit(ID) {
     .then(res => res.json())
     .then(res => {
         console.log("response from server ==>", res);
-        $("#editNameInput").val(res.nftName);
-        $("#editPriceInput").val(res.nftPrice);
-        $("#editDescInput").val(res.nftDesc);
+        $(`#editNameInput${IdOnly}`).val(res.nftName);
+        $(`#editPriceInput${IdOnly}`).val(res.nftPrice);
+        $(`#editDescInput${IdOnly}`).val(res.nftDesc);
     })
     .catch(e => {
         console.log("Failed to fetch NFTs", e);

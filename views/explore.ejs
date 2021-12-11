@@ -23,8 +23,8 @@
 <script>
     function showPrice(price, id){
     fetchNftPrice(Number(price)).then(
-            data => {
-                document.getElementById(id).innerHTML = "$ " + data;
+            price => {
+                document.getElementById(id).innerHTML = "$ " + Math.round(price);
             }
         )
         .catch(e => {
