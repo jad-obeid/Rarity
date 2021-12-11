@@ -16,7 +16,7 @@ function requestRegister() {
   else {
     $("#firstNameValidation").css("display", "none");
   }
-  
+
   if (lname == "") {
     $("#lastNameValidation").css("display", "block");
     valid = false;
@@ -33,7 +33,7 @@ function requestRegister() {
   else {
     $("#usernameValidation").css("display", "none");
   }
-  
+
   if (email == "") {
     $("#emailValidation").css("display", "block");
     valid = false;
@@ -42,7 +42,7 @@ function requestRegister() {
   else {
     $("#emailValidation").css("display", "none");
   }
-  
+
   if (password == "") {
     $("#passwordValidation").css("display", "block");
     valid = false;
@@ -51,7 +51,7 @@ function requestRegister() {
   else {
     $("#passwordValidation").css("display", "none");
   }
-  
+
   if (password != repeat_password || repeat_password == '') {
     $("#passwordConfirmValidation").css("display", "block");
     valid = false;
@@ -80,28 +80,26 @@ function requestRegister() {
           $("#usernameValidation").html("Username already exists!");
           return;
         }
-
-        else {
-          const options = {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
-            },
-            body: JSON.stringify(login_data),
-          };
-
-          fetch("/register", options)
-          .then(res => res.json)
-          .then(res => {
-            console.log("Successfully saved user", res);
-          })
-          .catch(e => {
-            console.log("Failed to register", e);
-          })
-          document.getElementById("register").style.display = "none";
-        }
       }
+
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(login_data),
+      };
+
+      fetch("/register", options)
+        .then(res => res.json)
+        .then(res => {
+          console.log("Successfully saved user", res);
+        })
+        .catch(e => {
+          console.log("Failed to register", e);
+        })
+      document.getElementById("register").style.display = "none";
     })
     .catch(e => {
       console.log("Failed to register user ====>", e);
@@ -120,7 +118,7 @@ function ConfirmPassowrd() {
     $("#passwordConfirmValidation").html("Passwords do not match!");
     $("#passwordConfirmValidation").css("display", "block");
   }
-  
+
   else {
     $("#passwordConfirmValidation").html("");
     $("#passwordConfirmValidation").css("display", "none");
@@ -144,7 +142,7 @@ function EmailRegex() {
     $("#emailValidation").css("display", "block");
     $("#emailValidation").html("This email is not valid!");
   }
-  
+
   else {
     $("#emailValidation").css("display", "none");
   }
