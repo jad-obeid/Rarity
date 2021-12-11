@@ -15,7 +15,7 @@
         </div>
             <div class="buy-container">
                 <button style="margin-right: 10px" onclick="RemoveNFT('<%= nft._id %>')">Delete</button>
-                <button onclick="Edit('<%= nft._id %>f')">Edit</button>
+                <button style="margin-right: 10px" onclick="Edit('<%= nft._id %>f')">Edit</button>
                 <% if(nft.listed != "True") { %>
                     <button id="'<%= nft._id %>'button" onclick="List('<%= nft._id %>')">List</button>
                     <%}%>
