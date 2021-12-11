@@ -52,7 +52,7 @@ passport.use(new localStrategy(function (username, password, done) {
 }));
 
 
-app.use("/", require("./routes.js"));
+app.use("/", require("./utils/routes.js"));
 
 app.use((req, res) => {
   res.render("404");
